@@ -36,7 +36,7 @@ spec:
       port: 8002
       protocol: TCP
       targetPort: 8002
-      nodePort: 30000
+      nodePort: 31000
   selector:
     app: lms-config-service
   type: NodePort
