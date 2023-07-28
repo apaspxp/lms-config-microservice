@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: lms-config-service
+  name: lms-config-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lms-config-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: lms-config-service
+    spec:
+      containers:
+        - image: apaspxp/lms-config-service:latest
+          name: lms-config-service
+          resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: lms-config-service
+  name: lms-config-service
+spec:
+  ports:
+    - name: 8002-8002
+      port: 8002
+      protocol: TCP
+      targetPort: 8002
+      nodePort: 30000
+  selector:
+    app: lms-config-service
+  type: NodePort
+status:
+  loadBalancer: {}
