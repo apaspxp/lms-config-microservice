@@ -32,10 +32,10 @@ metadata:
   name: lms-config-service
 spec:
   ports:
-    - name: 8002-8002
-      port: 8002
+    - name: 5555-5555
+      port: 5555
       protocol: TCP
-      targetPort: 8002
+      targetPort: 5555
       nodePort: 31000
   selector:
     app: lms-config-service
