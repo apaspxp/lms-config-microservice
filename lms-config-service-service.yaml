@@ -36,7 +36,7 @@ spec:
       port: 5555
       protocol: TCP
       targetPort: 5555
-      nodePort: 5555
+      nodePort: 31000
   selector:
     app: lms-config-service
   type: NodePort
