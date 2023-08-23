@@ -56,7 +56,7 @@
                     //Cleanup the resources
                     sh "kubectl delete -f lms-config-service-service.yaml --ignore-not-found"
                     //Apply the new manifest file
-                    sh "kubectl apply -f lms-config-service-service.yaml.yml"
+                    sh "kubectl apply -f lms-config-service-service.yaml"
                    }
                 }
             }

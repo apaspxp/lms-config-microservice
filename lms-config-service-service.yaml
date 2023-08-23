@@ -32,13 +32,13 @@ metadata:
   name: lms-config-service
 spec:
   ports:
-    - name: 5555-5555
-      port: 5555
+    - name: 8002-8002
+      port: 8002
       protocol: TCP
-      targetPort: 5555
-#      nodePort: 31000
+      targetPort: 8002
+      nodePort: 30000
   selector:
     app: lms-config-service
-  type: ClusterIP
+  type: NodePort
 status:
   loadBalancer: {}
