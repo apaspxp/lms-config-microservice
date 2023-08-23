@@ -10,6 +10,15 @@
 //                sh 'mvn clean install'
 //                }
 //             }
+//        stage('Database Connection'){
+//           steps {
+//             script {
+//                 withCredentials([usernamePassword(credentialsId: 'mysql-credentials-id', usernameVariable: 'DB_USERNAME', passwordVariable: 'DB_PASSWORD')]){
+//
+//                 }
+//             }
+//           }
+//        }
        stage('Build Docker Image') {
           steps {
             script {
