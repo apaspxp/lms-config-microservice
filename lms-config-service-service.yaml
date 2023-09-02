@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: lms-config-service
-  name: lms-config-service
+    app: lms-config-server
+  name: lms-config-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: lms-config-service
+      app: lms-config-server
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: lms-config-service
+        app: lms-config-server
     spec:
       containers:
-        - image: apaspxp/lms-config-service:latest
-          name: lms-config-service
+        - image: apaspxp/lms-config-server:latest
+          name: lms-config-server
           resources: {}
 status: {}
 ---
@@ -28,8 +28,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: lms-config-service
-  name: lms-config-service
+    app: lms-config-server
+  name: lms-config-server
 spec:
   ports:
     - name: 5555-5555
@@ -38,7 +38,7 @@ spec:
       targetPort: 5555
       nodePort: 30000
   selector:
-    app: lms-config-service
+    app: lms-config-server
   type: NodePort
 status:
   loadBalancer: {}
